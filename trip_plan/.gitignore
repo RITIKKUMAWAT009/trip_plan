@@ -43,3 +43,5 @@ app.*.map.json
 /android/app/release
 
 lib/src/constants/api_constants/api_constants.dart
+pubspec.yaml
+pubspec.lock
