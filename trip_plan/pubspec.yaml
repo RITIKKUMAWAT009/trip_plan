@@ -39,6 +39,7 @@ dependencies:
   iconsax: ^0.0.8
   smooth_page_indicator: ^1.1.0
   get: ^4.6.6
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
