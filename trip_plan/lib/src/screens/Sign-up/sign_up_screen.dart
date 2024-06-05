@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
+import 'package:trip_plan/src/screens/home/home_screen.dart';
 import 'package:trip_plan/src/screens/login/login_screen.dart';
 
 class SignUPSccreen extends StatelessWidget {
@@ -82,7 +83,8 @@ class SignUPSccreen extends StatelessWidget {
                 children: [
                   Text("Already have an account?",style: TextStyle(fontWeight: FontWeight.w500),),
                   TextButton(onPressed: (){
-                    Get.back();
+                   // Get.back();
+                    Get.to(()=>HomeScreen());
                   },
                   child: Text("Login",style: TextStyle(color: Colors.blue[800],fontWeight: FontWeight.w500),)),
                 ],

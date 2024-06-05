@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:trip_plan/src/screens/Sign-up/sign_up_screen.dart';
-import 'package:trip_plan/src/screens/login/login_screen.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:trip_plan/src/screens/onboarding/onboarding_screen.dart';
 
 void main() {
