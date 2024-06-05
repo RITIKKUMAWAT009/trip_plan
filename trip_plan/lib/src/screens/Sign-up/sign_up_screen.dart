@@ -74,7 +74,9 @@ class SignUPSccreen extends StatelessWidget {
               SizedBox(height: 40,),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(onPressed: (){},
+                child: ElevatedButton(onPressed: (){
+                  Get.to(()=>HomeScreen());
+                },
                     child: Text("Sign up",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 15),),style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800],),),
               ),
               SizedBox(height: 20,),
@@ -83,8 +85,7 @@ class SignUPSccreen extends StatelessWidget {
                 children: [
                   Text("Already have an account?",style: TextStyle(fontWeight: FontWeight.w500),),
                   TextButton(onPressed: (){
-                   // Get.back();
-                    Get.to(()=>HomeScreen());
+                    Get.back();
                   },
                   child: Text("Login",style: TextStyle(color: Colors.blue[800],fontWeight: FontWeight.w500),)),
                 ],

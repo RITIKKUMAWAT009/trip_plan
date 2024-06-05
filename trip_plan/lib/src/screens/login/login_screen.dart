@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
 import 'package:trip_plan/src/screens/Sign-up/sign_up_screen.dart';
+import 'package:trip_plan/src/screens/home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                     'Login',
                   ),
                   onPressed: () {
-
+                    Get.to(()=>HomeScreen());
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue[800],
