@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trip_plan/src/screens/review/reviews_screen.dart';
+import 'package:trip_plan/src/screens/trip_details/widgets/greating_dialog.dart';
 
 class TripDetails extends StatelessWidget {
   const TripDetails({super.key});
@@ -17,46 +18,38 @@ class TripDetails extends StatelessWidget {
               child: Stack(
                 children: [
                   Positioned.fill(
-                      bottom: MediaQuery.of(context).size.height * 0.1,
+                      bottom: MediaQuery.of(context).size.height * 0.0,
                       child: Image.asset(
                         "assets/animation/trip_imagee.jpeg",
                         fit: BoxFit.cover,
                       )),
-                  const Positioned(
-                    top: 50,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: Text(
-                        "Manali",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 25),
-                      ),
-                    ),
-                  ),
-                  Positioned(
+                   Positioned(
                       left: 10,
-                      top: 550,
+                      top: MediaQuery.of(context).size.height/10,
                       right: 10,
                       child: Column(
                         children: [
                           Text(
                             "Manali",
                             style: TextStyle(
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Iconsax.location),
+                              Icon(Iconsax.location,color: Colors.white,),
                               Text(
-                                "210KM",
+                                " 210KM",
                                 style: TextStyle(
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w800, fontSize: 18),
                               ),
                             ],
                           ),
-                          SizedBox(height: 6,),
+                          SizedBox(
+                            height: 6,
+                          ),
                           RatingBar.builder(
                             initialRating: 3,
                             minRating: 1,
@@ -64,30 +57,32 @@ class TripDetails extends StatelessWidget {
                             allowHalfRating: true,
                             itemCount: 5,
                             itemSize: 23,
-                            itemPadding: const EdgeInsets.symmetric(horizontal: 1.0),
+                            itemPadding:
+                            const EdgeInsets.symmetric(horizontal: 1.0),
                             itemBuilder: (context, _) => const Icon(
                               Icons.star,
-                              color: Colors.blue,
+                              color: Colors.amber,
                             ),
                             onRatingUpdate: (rating) {
                               print(rating);
                             },
                           ),
                         ],
-                      )),
+                      )
+                  ),
                   Positioned.fill(
                       child: DraggableScrollableSheet(
+                        expand: true,
                           maxChildSize: 0.9,
-                          minChildSize: 0.2,
+                          minChildSize: 0.1,
                           snap: true,
                           builder: (_, controller) {
                             return Material(
                               elevation: 5,
                               // ignore: prefer_const_constructors
                               borderRadius: BorderRadius.only(
-                                topRight: const Radius.circular(25),
-                                topLeft: const Radius.circular(25)
-                              ),
+                                  topRight: const Radius.circular(25),
+                                  topLeft: const Radius.circular(25)),
                               color: Colors.white,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -95,14 +90,7 @@ class TripDetails extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Center(
-                                      child: Container(
-                                        color: Colors.grey,
-                                        height: 4,
-                                        width: 30,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 6,
+                                      child: Icon(Icons.keyboard_arrow_up)
                                     ),
                                     Center(
                                       child: const Text(
@@ -122,6 +110,7 @@ class TripDetails extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
+
                                                 const Text(
                                                   " A nice curug.location just about five hundred  meters from the main road, separated by a lovely all-natural creek.",
                                                   style: TextStyle(
@@ -363,8 +352,11 @@ class TripDetails extends StatelessWidget {
                                                       child:
                                                           ElevatedButton.icon(
                                                         onPressed: () {
-
-
+                                                          showDialog(context: context,
+                                                            builder: (BuildContext context) {
+                                                              return GreatingDialog();
+                                                            },
+                                                          );
                                                         },
                                                         label: const Text(
                                                           "Add to my trip",
