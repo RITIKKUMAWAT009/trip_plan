@@ -64,10 +64,12 @@ class ReviewsScreen extends StatelessWidget {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(
           bottom: 10.0,
-          left: 50,
-          right: 15,
+          left: 50, right: 15,
+
         ),
         child: SizedBox(
+
+          height: 50,
           width: MediaQuery.of(context).size.width,
           child: ElevatedButton.icon(
             onPressed: () {

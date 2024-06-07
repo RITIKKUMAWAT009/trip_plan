@@ -46,7 +46,7 @@ dependencies:
   rating_summary: ^1.0.2+1
   rating_dialog: ^2.0.4
   dotted_border: ^2.1.0
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
