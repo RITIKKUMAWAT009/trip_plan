@@ -101,6 +101,7 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     Expanded(
                                       child: ListView.builder(
+                                          // physics: NeverScrollableScrollPhysics(),
                                           controller: controller,
                                           itemCount: 20,
                                           itemBuilder: (context, index) {
@@ -119,13 +120,9 @@ class HomeScreen extends StatelessWidget {
                                                       Container(
                                                         width: 150,
                                                         height: 120,
-                                                        clipBehavior:
-                                                            Clip.antiAlias,
+                                                        clipBehavior: Clip.antiAlias,
                                                         decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20) // Adjust the radius as needed
+                                                            borderRadius: BorderRadius.circular(20) // Adjust the radius as needed
                                                             ),
                                                         child: Image.asset(
                                                           'assets/animation/trip_imagee.jpeg',

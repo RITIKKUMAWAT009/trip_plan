@@ -13,9 +13,11 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.blue[800],
+        foregroundColor: Colors.white,
         centerTitle: true,
         titleTextStyle: const TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+            fontWeight: FontWeight.bold, fontSize: 20),
         title: const Text('Login to Trip World'),
       ),
       body: SingleChildScrollView(
@@ -77,6 +79,7 @@ class LoginScreen extends StatelessWidget {
                     Get.to(()=>HomeScreen());
                   },
                   style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       backgroundColor: Colors.blue[800],
                       foregroundColor: Colors.white),
                 ),
@@ -89,8 +92,8 @@ class LoginScreen extends StatelessWidget {
                   children: [
                 const Text("Don't have an account?"),
                 TextButton(
-                  child: const Text(
-                    'SignUp',
+                  child:  Text(
+                    'SignUp',style: TextStyle(color: Colors.blue.shade800),
                   ),
                   onPressed: () {
                     Get.to(()=>SignUPSccreen());

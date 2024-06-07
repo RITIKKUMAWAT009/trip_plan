@@ -50,7 +50,7 @@ class ReviewsScreen extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return user_review_section(
+                      return UserReviewSection(
                         username: 'Masoom Jaat',
                         date: '5/5/2024',
                         userreview: 'The trip was really good. I would like to thank Aruna from Country Travel Point, she was very kind and supportive throughout the trip. And also would like to thank Nageshver Tiwari from Travel Triangle who was supportive for the trip plan.',
@@ -71,7 +71,7 @@ class ReviewsScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: ElevatedButton.icon(
             onPressed: () {
-              final _dialog = review_dialog();
+              final _dialog = ReviewDialog();
               // show the dialog
               showDialog(
                 context: context,
