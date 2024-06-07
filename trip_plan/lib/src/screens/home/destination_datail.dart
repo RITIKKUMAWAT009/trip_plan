@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../trip_details/trip_details.dart';
+
 class DestinationDetails extends StatelessWidget {
   const DestinationDetails({super.key});
 
@@ -108,7 +110,7 @@ class DestinationDetails extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () => Get.to(() =>
-                        const DestinationDetails()),
+                        const TripDetails()),
                         child: Column(
                           crossAxisAlignment:
                           CrossAxisAlignment.start,

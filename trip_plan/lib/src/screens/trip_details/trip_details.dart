@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trip_plan/src/screens/review/reviews_screen.dart';
+import 'package:trip_plan/src/screens/trip_details/widgets/greating_dialog.dart';
 
 class TripDetails extends StatelessWidget {
   const TripDetails({super.key});
@@ -40,12 +41,12 @@ class TripDetails extends StatelessWidget {
                       right: 10,
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "Manali",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Iconsax.location),
@@ -56,7 +57,7 @@ class TripDetails extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(height: 6,),
+                          const SizedBox(height: 6,),
                           RatingBar.builder(
                             initialRating: 3,
                             minRating: 1,
@@ -101,11 +102,11 @@ class TripDetails extends StatelessWidget {
                                         width: 30,
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 6,
                                     ),
-                                    Center(
-                                      child: const Text(
+                                    const Center(
+                                      child: Text(
                                         "Details",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -345,7 +346,7 @@ class TripDetails extends StatelessWidget {
                                                         IconButton(
                                                             onPressed: () {
                                                               Get.to(() =>
-                                                                  ReviewsScreen());
+                                                                  const ReviewsScreen());
                                                             },
                                                             icon: const Icon(Icons
                                                                 .arrow_forward_ios))
@@ -363,8 +364,11 @@ class TripDetails extends StatelessWidget {
                                                       child:
                                                           ElevatedButton.icon(
                                                         onPressed: () {
-
-
+                                                          // showDialog(
+                                                          //     context: context, builder: (BuildContext context){
+                                                          //       return GreatingDialog();
+                                                          // }
+                                                          // );
                                                         },
                                                         label: const Text(
                                                           "Add to my trip",
