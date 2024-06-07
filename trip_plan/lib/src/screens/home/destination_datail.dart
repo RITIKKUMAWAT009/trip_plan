@@ -11,13 +11,13 @@ class DestinationDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: AlwaysScrollableScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
               // Container(
               //
               //   child: Stack(
@@ -79,7 +79,7 @@ class DestinationDetails extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Row(
+              const Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
