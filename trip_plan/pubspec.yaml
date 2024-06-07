@@ -45,12 +45,16 @@ dependencies:
   slide_rating_dialog: ^1.0.4
   rating_dialog: ^2.0.4
   animated_read_more_text: ^0.0.6
+<<<<<<< Updated upstream
 =======
   easy_stepper: ^0.8.5
   rating_summary: ^1.0.2+1
   animated_read_more_text: ^0.0.6
   rating_dialog: ^2.0.4
   dotted_border: ^2.1.0
+>>>>>>> Stashed changes
+=======
+  giffy_dialog: ^2.1.0
 >>>>>>> Stashed changes
 
 dev_dependencies:
