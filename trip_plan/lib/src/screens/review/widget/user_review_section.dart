@@ -2,8 +2,8 @@ import 'package:animated_read_more_text/animated_read_more_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class user_review_section extends StatelessWidget {
-  const user_review_section({
+class UserReviewSection extends StatelessWidget {
+  const UserReviewSection({
     super.key, required this.username, required this.date, required this.userreview,
   });
   final String username;
@@ -29,7 +29,8 @@ class user_review_section extends StatelessWidget {
             username,
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
           ),
-          subtitle: Text(date,
+          subtitle: Text(
+            date,
           style: TextStyle(fontWeight: FontWeight.w500,fontSize:13 ),
           ),
           trailing: RatingBar.builder(

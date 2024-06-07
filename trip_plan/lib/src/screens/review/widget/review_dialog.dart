@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
-class review_dialog extends StatelessWidget {
-  const review_dialog({
+class ReviewDialog extends StatelessWidget {
+  const ReviewDialog({
     super.key,
   });
 

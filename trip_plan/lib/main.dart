@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:trip_plan/src/screens/trip_details/trip_details.dart';
 import 'package:trip_plan/src/screens/onboarding/onboarding_screen.dart';
+import 'package:trip_plan/src/screens/review/reviews_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       //   useMaterial3: true,
       //
       // ),
-      home: const OnBoardingScreen(),
+      home: const TripDetails(),
     );
   }
 }

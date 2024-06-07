@@ -12,7 +12,9 @@ class SignUPSccreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       title:  Text("Sign up to Trip World",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+        backgroundColor: Colors.blue[800],
+        foregroundColor: Colors.white,
+        title:  const Text("Sign up to Trip World",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
         centerTitle: true,
       ),
       body: Padding(
@@ -24,66 +26,70 @@ class SignUPSccreen extends StatelessWidget {
               Lottie.asset('assets/animation/login.json',
                   height: MediaQuery.of(context).size.height / 3 - 100,
                   width: MediaQuery.of(context).size.width / 1),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
 
-              Text("Join our growing community of 3 Idiots travelers.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
-              SizedBox(height: 20,),
+              const Text("Join our growing community of 3 Idiots travelers.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+              const SizedBox(height: 20,),
               TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     hintText: 'Enter your name',
-                    prefixIcon: Icon(Iconsax.user),
-                    labelStyle: TextStyle(color: Colors.black),
+                    prefixIcon: const Icon(Iconsax.user),
+                    labelStyle: const TextStyle(color: Colors.black),
                     labelText: 'Name'),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     hintText: 'Enter email address',
-                    prefixIcon: Icon(Icons.email_outlined),
-                    labelStyle: TextStyle(color: Colors.black),
+                    prefixIcon: const Icon(Icons.email_outlined),
+                    labelStyle: const TextStyle(color: Colors.black),
                     labelText: 'Email'),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               TextFormField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     hintText: 'Enter your password',
-                    prefixIcon: Icon(Icons.lock_outline),
-                    labelStyle: TextStyle(color: Colors.black),
-                    suffixIcon: Icon(Iconsax.eye_slash),
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    labelStyle: const TextStyle(color: Colors.black),
+                    suffixIcon: const Icon(Iconsax.eye_slash),
                     labelText: 'Password'),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(value: true, onChanged: (value) {}),
-                  Text("Agree",style: TextStyle(fontWeight: FontWeight.w500),),
+                  const Text("Agree",style: TextStyle(fontWeight: FontWeight.w500),),
                   TextButton(onPressed: (){},
                       child: Text("Trems of Service",style: TextStyle(color: Colors.blue[800],fontWeight: FontWeight.w500),)),
                 ],
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
               SizedBox(
+                height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(onPressed: (){
-                  Get.to(()=>HomeScreen());
+                  Get.to(()=>const HomeScreen());
                 },
-                    child: Text("Sign up",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 15),),style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800],),),
+                    child: const Text("Sign up",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 15),),
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    backgroundColor: Colors.blue[800],),),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?",style: TextStyle(fontWeight: FontWeight.w500),),
+                  const Text("Already have an account?",style: TextStyle(fontWeight: FontWeight.w500),),
                   TextButton(onPressed: (){
                     Get.back();
                   },
