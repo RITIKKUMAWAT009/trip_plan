@@ -40,10 +40,18 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   get: ^4.6.6
   flutter_rating_bar: ^4.0.1
+<<<<<<< Updated upstream
   rating_summary: ^1.0.2+1
   slide_rating_dialog: ^1.0.4
   rating_dialog: ^2.0.4
   animated_read_more_text: ^0.0.6
+=======
+  easy_stepper: ^0.8.5
+  rating_summary: ^1.0.2+1
+  animated_read_more_text: ^0.0.6
+  rating_dialog: ^2.0.4
+  dotted_border: ^2.1.0
+>>>>>>> Stashed changes
 
 dev_dependencies:
   flutter_test:
