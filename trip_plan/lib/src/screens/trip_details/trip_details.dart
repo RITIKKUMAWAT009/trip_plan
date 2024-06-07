@@ -29,13 +29,13 @@ class TripDetails extends StatelessWidget {
                       right: 10,
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "Manali",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Iconsax.location,color: Colors.white,),
@@ -47,6 +47,7 @@ class TripDetails extends StatelessWidget {
                               ),
                             ],
                           ),
+
                           SizedBox(
                             height: 6,
                           ),
@@ -90,10 +91,19 @@ class TripDetails extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Center(
+                                      child: Container(
+                                        color: Colors.grey,
+                                        height: 4,
+                                        width: 30,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 6,
+
                                       child: Icon(Icons.keyboard_arrow_up)
                                     ),
-                                    Center(
-                                      child: const Text(
+                                    const Center(
+                                      child: Text(
                                         "Details",
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
@@ -334,7 +344,7 @@ class TripDetails extends StatelessWidget {
                                                         IconButton(
                                                             onPressed: () {
                                                               Get.to(() =>
-                                                                  ReviewsScreen());
+                                                                  const ReviewsScreen());
                                                             },
                                                             icon: const Icon(Icons
                                                                 .arrow_forward_ios))
@@ -352,6 +362,7 @@ class TripDetails extends StatelessWidget {
                                                       child:
                                                           ElevatedButton.icon(
                                                         onPressed: () {
+
                                                           showDialog(context: context,
                                                             builder: (BuildContext context) {
                                                               return GreatingDialog();

@@ -159,8 +159,10 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:trip_plan/src/controller/my_trip_controller/my_trip_controller.dart';
+import 'package:trip_plan/src/screens/route_detail/route_detail_screen.dart';
 import 'package:trip_plan/src/screens/wishlist/wishlist_screen.dart';
 
 class MyTripsScreen extends StatelessWidget {
@@ -270,14 +272,19 @@ class ItineraryScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.all(10),
-                        height: MediaQuery.of(context).size.height / 4,
-                        width: MediaQuery.of(context).size.width - 20,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                        clipBehavior: Clip.antiAlias,
-                        child: Image.asset(
-                          fit: BoxFit.fitWidth, 'assets/animation/trip_imagee.jpeg',
+                      GestureDetector(
+                        onTap: (){
+                          Get.to(()=>RouteDetailScreen());
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.all(10),
+                          height: MediaQuery.of(context).size.height / 4,
+                          width: MediaQuery.of(context).size.width - 20,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          clipBehavior: Clip.antiAlias,
+                          child: Image.asset(
+                            fit: BoxFit.fitWidth, 'assets/animation/trip_imagee.jpeg',
+                          ),
                         ),
                       ),
                       const Text(
