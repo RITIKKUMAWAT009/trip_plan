@@ -14,18 +14,27 @@ class TripDetails extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
           child: SizedBox(
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height,
               child: Stack(
                 children: [
                   Positioned.fill(
-                      bottom: MediaQuery.of(context).size.height * 0.0,
+                      bottom: MediaQuery
+                          .of(context)
+                          .size
+                          .height * 0.0,
                       child: Image.asset(
                         "assets/animation/trip_imagee.jpeg",
                         fit: BoxFit.cover,
                       )),
-                   Positioned(
+                  Positioned(
                       left: 10,
-                      top: MediaQuery.of(context).size.height/10,
+                      top: MediaQuery
+                          .of(context)
+                          .size
+                          .height / 10,
                       right: 10,
                       child: Column(
                         children: [
@@ -38,7 +47,7 @@ class TripDetails extends StatelessWidget {
                           const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Iconsax.location,color: Colors.white,),
+                              Icon(Iconsax.location, color: Colors.white,),
                               Text(
                                 " 210KM",
                                 style: TextStyle(
@@ -60,7 +69,8 @@ class TripDetails extends StatelessWidget {
                             itemSize: 23,
                             itemPadding:
                             const EdgeInsets.symmetric(horizontal: 1.0),
-                            itemBuilder: (context, _) => const Icon(
+                            itemBuilder: (context, _) =>
+                            const Icon(
                               Icons.star,
                               color: Colors.amber,
                             ),
@@ -73,7 +83,7 @@ class TripDetails extends StatelessWidget {
                   ),
                   Positioned.fill(
                       child: DraggableScrollableSheet(
-                        expand: true,
+                          expand: true,
                           maxChildSize: 0.9,
                           minChildSize: 0.1,
                           snap: true,
@@ -98,9 +108,9 @@ class TripDetails extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 6,
+                                        height: 6,
 
-                                      child: Icon(Icons.keyboard_arrow_up)
+                                        child: Icon(Icons.keyboard_arrow_up)
                                     ),
                                     const Center(
                                       child: Text(
@@ -112,20 +122,20 @@ class TripDetails extends StatelessWidget {
                                     ),
                                     Expanded(
                                       child: ListView.builder(
-                                          // physics: NeverScrollableScrollPhysics(),
+                                        // physics: NeverScrollableScrollPhysics(),
                                           controller: controller,
                                           itemCount: 1,
                                           itemBuilder: (context, index) {
                                             return Column(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                               children: [
 
                                                 const Text(
                                                   " A nice curug.location just about five hundred  meters from the main road, separated by a lovely all-natural creek.",
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       fontSize: 16),
                                                 ),
                                                 const SizedBox(
@@ -144,30 +154,30 @@ class TripDetails extends StatelessWidget {
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.w500),
+                                                        FontWeight.w500),
                                                   ),
                                                   subtitle: Text(
                                                     "\$21-\$40",
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.bold),
+                                                        FontWeight.bold),
                                                   ),
                                                   trailing: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.min,
+                                                    MainAxisSize.min,
                                                     children: [
                                                       Icon(
                                                         Icons
                                                             .verified_user_rounded,
                                                         color:
-                                                            Colors.greenAccent,
+                                                        Colors.greenAccent,
                                                       ),
                                                       Text(
                                                         "Verified",
                                                         style: TextStyle(
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                            FontWeight.bold,
                                                             color: Colors
                                                                 .greenAccent,
                                                             fontSize: 15),
@@ -181,7 +191,7 @@ class TripDetails extends StatelessWidget {
                                                     "It isn't very expensive to get there from the major\ncity of Sukabumi or Bogor.",
                                                     style: TextStyle(
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                        FontWeight.w500,
                                                         fontSize: 16),
                                                   ),
                                                 ),
@@ -201,30 +211,30 @@ class TripDetails extends StatelessWidget {
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.w500),
+                                                        FontWeight.w500),
                                                   ),
                                                   subtitle: Text(
                                                     "All Day",
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.bold),
+                                                        FontWeight.bold),
                                                   ),
                                                   trailing: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.min,
+                                                    MainAxisSize.min,
                                                     children: [
                                                       Icon(
                                                         Icons
                                                             .verified_user_rounded,
                                                         color:
-                                                            Colors.greenAccent,
+                                                        Colors.greenAccent,
                                                       ),
                                                       Text(
                                                         "Verified",
                                                         style: TextStyle(
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                            FontWeight.bold,
                                                             color: Colors
                                                                 .greenAccent,
                                                             fontSize: 15),
@@ -238,7 +248,7 @@ class TripDetails extends StatelessWidget {
                                                     "Spend all day in this curug for maximum impact.",
                                                     style: TextStyle(
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                        FontWeight.w500,
                                                         fontSize: 16),
                                                   ),
                                                 ),
@@ -258,30 +268,30 @@ class TripDetails extends StatelessWidget {
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.w500),
+                                                        FontWeight.w500),
                                                   ),
                                                   subtitle: Text(
                                                     "Very Good",
                                                     style: TextStyle(
                                                         fontSize: 18,
                                                         fontWeight:
-                                                            FontWeight.bold),
+                                                        FontWeight.bold),
                                                   ),
                                                   trailing: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.min,
+                                                    MainAxisSize.min,
                                                     children: [
                                                       Icon(
                                                         Icons
                                                             .verified_user_rounded,
                                                         color:
-                                                            Colors.greenAccent,
+                                                        Colors.greenAccent,
                                                       ),
                                                       Text(
                                                         "Verified",
                                                         style: TextStyle(
                                                             fontWeight:
-                                                                FontWeight.bold,
+                                                            FontWeight.bold,
                                                             color: Colors
                                                                 .greenAccent,
                                                             fontSize: 15),
@@ -295,7 +305,7 @@ class TripDetails extends StatelessWidget {
                                                     "Only the last leg is walking over the creek.",
                                                     style: TextStyle(
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                        FontWeight.w500,
                                                         fontSize: 16),
                                                   ),
                                                 ),
@@ -307,16 +317,17 @@ class TripDetails extends StatelessWidget {
                                                     Container(
                                                       decoration: BoxDecoration(
                                                           borderRadius:
-                                                              BorderRadius
-                                                                  .circular(30),
+                                                          BorderRadius
+                                                              .circular(30),
                                                           color: Colors.red),
                                                       height: 200,
                                                       width:
-                                                          MediaQuery.of(context)
-                                                              .size
-                                                              .width,
+                                                      MediaQuery
+                                                          .of(context)
+                                                          .size
+                                                          .width,
                                                       clipBehavior:
-                                                          Clip.antiAlias,
+                                                      Clip.antiAlias,
                                                       child: const Image(
                                                         image: AssetImage(
                                                           "assets/images/map.jpeg",
@@ -330,24 +341,25 @@ class TripDetails extends StatelessWidget {
                                                     const Divider(),
                                                     Row(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                       children: [
                                                         const Text(
                                                           "Reviews(199)",
                                                           style: TextStyle(
                                                               fontSize: 20,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
+                                                              FontWeight
+                                                                  .bold),
                                                         ),
                                                         IconButton(
                                                             onPressed: () {
                                                               Get.to(() =>
-                                                                  const ReviewsScreen());
+                                                              const ReviewsScreen());
                                                             },
-                                                            icon: const Icon(Icons
-                                                                .arrow_forward_ios))
+                                                            icon: const Icon(
+                                                                Icons
+                                                                    .arrow_forward_ios))
                                                       ],
                                                     ),
                                                     const SizedBox(
@@ -355,26 +367,18 @@ class TripDetails extends StatelessWidget {
                                                     ),
                                                     SizedBox(
                                                       height: 50,
-                                                      width:
-                                                          MediaQuery.of(context)
-                                                              .size
-                                                              .width,
+                                                      width:MediaQuery.of(context).size.width,
                                                       child:
-                                                          ElevatedButton.icon(
+                                                      ElevatedButton.icon(
                                                         onPressed: () {
 
-                                                          showDialog(context: context,
-                                                            builder: (BuildContext context) {
-                                                              return GreatingDialog();
-                                                            },
-                                                          );
                                                         },
                                                         label: const Text(
                                                           "Add to my trip",
                                                           style: TextStyle(
                                                               fontSize: 15,
                                                               color:
-                                                                  Colors.white),
+                                                              Colors.white),
                                                         ),
                                                         icon: const Icon(
                                                           Icons.add,
@@ -384,11 +388,11 @@ class TripDetails extends StatelessWidget {
                                                             .styleFrom(
                                                           shape: RoundedRectangleBorder(
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
+                                                              BorderRadius
+                                                                  .circular(
+                                                                  10)),
                                                           backgroundColor:
-                                                              Colors.blue[800],
+                                                          Colors.blue[800],
                                                         ),
                                                       ),
                                                     ),
