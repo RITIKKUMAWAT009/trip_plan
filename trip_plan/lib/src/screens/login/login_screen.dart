@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
+import 'package:trip_plan/src/bottom_navigation/bottom_navigation.dart';
 import 'package:trip_plan/src/screens/Sign-up/sign_up_screen.dart';
 import 'package:trip_plan/src/screens/home/home_screen.dart';
 
@@ -76,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                     'Login',
                   ),
                   onPressed: () {
-                    Get.to(()=>HomeScreen());
+                    Get.to(()=>BottomNavigation());
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
