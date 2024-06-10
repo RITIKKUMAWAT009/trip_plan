@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:trip_plan/src/bottom_navigation/bottom_navigation.dart';
 
 import '../../screens/login/login_screen.dart';
 class OnBoardingController extends GetxController{
