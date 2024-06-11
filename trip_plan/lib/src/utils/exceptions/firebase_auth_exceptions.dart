@@ -52,7 +52,7 @@ class TFirebaseAuthException implements Exception {
       case 'user-not-found':
         return 'No user found for the given email or UID.';
       case 'invalid-credential':
-        return 'The supplied credential is malformed or has expired.';
+        return 'Incorrect email or password. Please check your email & password and try again.';
       case 'wrong-password':
         return 'The password is invalid. Please check your password and try again.';
       case 'user-token-revoked':
