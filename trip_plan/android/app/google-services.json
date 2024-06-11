@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "265819471352",
-    "project_id": "trip-plan-430c9",
-    "storage_bucket": "trip-plan-430c9.appspot.com"
+    "project_number": "862776567455",
+    "project_id": "tripplan-de193",
+    "storage_bucket": "tripplan-de193.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:265819471352:android:a9cb284c7ce11de037aa0d",
+        "mobilesdk_app_id": "1:862776567455:android:fb7c6f33bce23db1b9a4aa",
         "android_client_info": {
           "package_name": "com.example.trip_plan"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBNB5LUnwZFJq22ZIpCw9mG9hRt3uo_soI"
+          "current_key": "AIzaSyD1HgbhWRlZoszG_qgpYJ86_tHrYcHhRIw"
         }
       ],
       "services": {

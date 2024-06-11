@@ -44,38 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCB4lQFydmPUz5CPTH98Lwjl_MxjA9Lhmg',
-    appId: '1:265819471352:web:32c6be7af695209c37aa0d',
-    messagingSenderId: '265819471352',
-    projectId: 'trip-plan-430c9',
-    authDomain: 'trip-plan-430c9.firebaseapp.com',
-    storageBucket: 'trip-plan-430c9.appspot.com',
-    measurementId: 'G-HWQ0BYSNDS',
+    apiKey: 'AIzaSyAtRufv0iF2ov2zY24OLT4uFZntQaFIJpA',
+    appId: '1:862776567455:web:6984a6d1db74a9feb9a4aa',
+    messagingSenderId: '862776567455',
+    projectId: 'tripplan-de193',
+    authDomain: 'tripplan-de193.firebaseapp.com',
+    storageBucket: 'tripplan-de193.appspot.com',
+    measurementId: 'G-R7H6JD6MJQ',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBNB5LUnwZFJq22ZIpCw9mG9hRt3uo_soI',
-    appId: '1:265819471352:android:a9cb284c7ce11de037aa0d',
-    messagingSenderId: '265819471352',
-    projectId: 'trip-plan-430c9',
-    storageBucket: 'trip-plan-430c9.appspot.com',
+    apiKey: 'AIzaSyD1HgbhWRlZoszG_qgpYJ86_tHrYcHhRIw',
+    appId: '1:862776567455:android:fb7c6f33bce23db1b9a4aa',
+    messagingSenderId: '862776567455',
+    projectId: 'tripplan-de193',
+    storageBucket: 'tripplan-de193.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyARBGsjB-YJmvxCsKqBEdf709FBwwwaw0k',
-    appId: '1:265819471352:ios:f46a6356d622f19837aa0d',
-    messagingSenderId: '265819471352',
-    projectId: 'trip-plan-430c9',
-    storageBucket: 'trip-plan-430c9.appspot.com',
+    apiKey: 'AIzaSyDWP4ycp1g2yOOUV5GUCqitf5V24uxJiu0',
+    appId: '1:862776567455:ios:9011b644924eb3d0b9a4aa',
+    messagingSenderId: '862776567455',
+    projectId: 'tripplan-de193',
+    storageBucket: 'tripplan-de193.appspot.com',
     iosBundleId: 'com.example.tripPlan',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyARBGsjB-YJmvxCsKqBEdf709FBwwwaw0k',
-    appId: '1:265819471352:ios:f46a6356d622f19837aa0d',
-    messagingSenderId: '265819471352',
-    projectId: 'trip-plan-430c9',
-    storageBucket: 'trip-plan-430c9.appspot.com',
+    apiKey: 'AIzaSyDWP4ycp1g2yOOUV5GUCqitf5V24uxJiu0',
+    appId: '1:862776567455:ios:9011b644924eb3d0b9a4aa',
+    messagingSenderId: '862776567455',
+    projectId: 'tripplan-de193',
+    storageBucket: 'tripplan-de193.appspot.com',
     iosBundleId: 'com.example.tripPlan',
   );
+
 }
