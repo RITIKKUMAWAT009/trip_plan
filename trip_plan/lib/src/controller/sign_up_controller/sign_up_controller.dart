@@ -10,14 +10,20 @@ class SignUpController extends GetxController {
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController userName = TextEditingController();
 
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   final RxBool isShowPassword = true.obs;
+  final RxBool isPrivacyAccepted=false.obs;
 
   signUpWithEmailAndPassword() async {
     try {
-      await _authRepo.signUpWithEmailAndPassword(email.text, password.text);
+      if(isPrivacyAccepted.value==false){
+        Loaders.warningSnackBar(title: 'Accept Privacy Policy', message: 'Please read our term & condition');
+        return;
+      }
+      await _authRepo.signUpWithEmailAndPassword(name.text, email.text,password.text,userName.text);
       Loaders.successfullySnackBar(
           title: "Congratulations",
           message: "Your Account created Successfully");

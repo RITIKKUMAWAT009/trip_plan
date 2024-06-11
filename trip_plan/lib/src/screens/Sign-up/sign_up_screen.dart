@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
@@ -46,22 +48,48 @@ class SignUPSccreen extends StatelessWidget {
                 key: controller.formkey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: controller.name,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Enter Your Name";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            controller: controller.name,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return "Enter Your Name";
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                hintText: 'Enter your name',
+                                prefixIcon: const Icon(Icons.person_pin,size: 30,),
+                                labelStyle: const TextStyle(color: Colors.black),
+                                labelText: 'Name'),
                           ),
-                          hintText: 'Enter your name',
-                          prefixIcon: const Icon(Iconsax.user),
-                          labelStyle: const TextStyle(color: Colors.black),
-                          labelText: 'Name'),
+                        ),
+                        SizedBox(width: 10,),
+                        Expanded(
+                          child: TextFormField(
+                            controller: controller.userName,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return "Username required";
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                hintText: 'Enter Username',
+                                prefixIcon: const Icon(Iconsax.user),
+                                labelStyle: const TextStyle(color: Colors.black),
+                                labelText: 'Username'),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
@@ -120,23 +148,27 @@ class SignUPSccreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  const Text(
-                    "Agree",
-                    style: TextStyle(fontWeight: FontWeight.w500),
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Trems of Service",
-                        style: TextStyle(
-                            color: Colors.blue[800],
-                            fontWeight: FontWeight.w500),
-                      )),
-                ],
+              Obx(
+                ()=> Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Checkbox(value: controller.isPrivacyAccepted.value, onChanged: (value) {
+                      controller.isPrivacyAccepted.value=value!;
+                    }),
+                    const Text(
+                      "Agree",
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Trems of Service",
+                          style: TextStyle(
+                              color: Colors.blue[800],
+                              fontWeight: FontWeight.w500),
+                        )),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 40,

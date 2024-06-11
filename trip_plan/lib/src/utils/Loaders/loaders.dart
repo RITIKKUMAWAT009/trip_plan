@@ -40,7 +40,7 @@ class Loaders {
       duration: Duration(seconds: duration),
       colorText: Colors.white,
       snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: Colors.orangeAccent,
       margin: EdgeInsets.all(20),
       icon: Icon(Iconsax.check, color: Colors.white,),
     );
