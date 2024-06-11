@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class OnBoardingPage extends StatelessWidget {
+
   const OnBoardingPage(
       {super.key,
       required this.title,

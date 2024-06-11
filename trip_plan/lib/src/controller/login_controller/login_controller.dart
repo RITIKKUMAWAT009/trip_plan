@@ -8,6 +8,12 @@ import '../../bottom_navigation/bottom_navigation.dart';
 
 class LoginController extends GetxController {
   LoginController get instance => Get.find();
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+    AuthenticationRepository().localStorage.write('isFirstTime', false);
+  }
 
   final _authRepo = Get.put(AuthenticationRepository());
 

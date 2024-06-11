@@ -14,7 +14,7 @@ class HeadingText extends StatelessWidget {
         children: [
           SizedBox(width:100,child: Text(title,style:TextStyle(fontSize: 18,fontWeight: FontWeight.bold),maxLines: 1,overflow: TextOverflow.ellipsis,)),
           SizedBox(width: 20,),
-          Text(subTitle,style: TextStyle(fontSize: 18,fontWeight: FontWeight.normal,color: Colors.black),maxLines: 1,overflow: TextOverflow.ellipsis,),
+          Text(subTitle,style: TextStyle(fontSize: 18,fontWeight: FontWeight.normal,color: Colors.black,),maxLines: 1,overflow: TextOverflow.ellipsis,),
         ],
       ),
     );
