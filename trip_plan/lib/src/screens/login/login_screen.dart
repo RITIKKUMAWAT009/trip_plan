@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
-import 'package:trip_plan/src/bottom_navigation/bottom_navigation.dart';
+
+import 'package:trip_plan/src/controller/login_controller/login_controller.dart';
 import 'package:trip_plan/src/screens/Sign-up/sign_up_screen.dart';
-import 'package:trip_plan/src/screens/home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
         foregroundColor: Colors.white,
         centerTitle: true,
-        titleTextStyle: const TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 20),
+        titleTextStyle:
+            const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         title: const Text('Login to Trip World'),
       ),
       body: SingleChildScrollView(
@@ -33,9 +35,18 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               Form(
+                key: controller.signInFormKey,
                 child: Column(
                   children: [
                     TextFormField(
+                      controller: controller.email,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Enter Your Email";
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -50,18 +61,35 @@ class LoginScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          hintText: 'Enter your password',
-                          suffixIcon: const Icon(Iconsax.eye_slash),
-                          prefixIcon: const Icon(Icons.lock),
-                          labelStyle: const TextStyle(color: Colors.black),
-                          labelText: 'Password'),
+                    Obx(
+                      () => TextFormField(
+                        obscureText: controller.isShowPassword.value,
+                        controller: controller.password,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Enter Your Password";
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            hintText: 'Enter your password',
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  controller.isShowPassword.value =
+                                      !controller.isShowPassword.value;
+                                },
+                                icon: controller.isShowPassword.value
+                                    ? Icon(Iconsax.eye_slash)
+                                    : Icon(Iconsax.eye)),
+                            prefixIcon: const Icon(Icons.lock),
+                            labelStyle: const TextStyle(color: Colors.black),
+                            labelText: 'Password'),
+                      ),
                     ),
                   ],
                 ),
@@ -77,10 +105,13 @@ class LoginScreen extends StatelessWidget {
                     'Login',
                   ),
                   onPressed: () {
-                    Get.to(()=>BottomNavigation());
+                    if (controller.signInFormKey.currentState!.validate()) {
+                      controller.signInWithEmailAndPassword();
+                    }
                   },
                   style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       backgroundColor: Colors.blue[800],
                       foregroundColor: Colors.white),
                 ),
@@ -88,16 +119,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Text("Don't have an account?"),
                 TextButton(
-                  child:  Text(
-                    'SignUp',style: TextStyle(color: Colors.blue.shade800),
+                  child: Text(
+                    'SignUp',
+                    style: TextStyle(color: Colors.blue.shade800),
                   ),
                   onPressed: () {
-                    Get.to(()=>SignUPSccreen());
+                    Get.to(() => SignUPSccreen());
                   },
                 ),
               ])

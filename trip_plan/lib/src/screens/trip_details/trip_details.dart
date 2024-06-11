@@ -130,7 +130,6 @@ class TripDetails extends StatelessWidget {
                                               crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                               children: [
-
                                                 const Text(
                                                   " A nice curug.location just about five hundred  meters from the main road, separated by a lovely all-natural creek.",
                                                   style: TextStyle(
