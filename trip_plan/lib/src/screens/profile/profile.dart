@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trip_plan/src/common/widgets/custom_shape_container.dart';
 import 'package:trip_plan/src/common/widgets/heading_text.dart';
+import 'package:trip_plan/src/controller/trip_controller/trip_controller.dart';
 import 'package:trip_plan/src/controller/user_controller/user_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userController = Get.put(UserController());
+    final tripController=Get.put(TripController());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -85,6 +87,23 @@ class ProfileScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   child: const Text('Logout'),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 30,
+                child: ElevatedButton(
+                  onPressed: () {
+                    tripController.uploadDummyData();
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red.shade300,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  child: const Text('Upload data'),
                 ),
               ),
               SizedBox(
