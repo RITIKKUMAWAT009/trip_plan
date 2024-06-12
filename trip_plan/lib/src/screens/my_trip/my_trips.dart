@@ -171,7 +171,6 @@ class MyTripsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(MyTripController());
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Trips'),
@@ -259,64 +258,69 @@ class ItineraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(MyTripController());
+    print(controller.myTripList.length);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: ListView.builder(
-                itemCount: 1,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Get.to(()=>RouteDetailScreen());
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.all(10),
-                          height: MediaQuery.of(context).size.height / 4,
-                          width: MediaQuery.of(context).size.width - 20,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                          clipBehavior: Clip.antiAlias,
-                          child: Image.asset(
-                            fit: BoxFit.fitWidth, 'assets/animation/trip_imagee.jpeg',
-                          ),
-                        ),
-                      ),
-                      const Text(
-                        'Fun Trip!',
-                        style: TextStyle(
-                            color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '20 Aug 2025',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.black54),
-                          ),
-                          Text(' | ',
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                          Text('1 destination',
+            Obx(
+            ()=> SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: ListView.builder(
+                    itemCount: controller.myTripList.value.length,
+                    itemBuilder: (context, index) {
+                      return  Column(
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+                                Get.to(()=>RouteDetailScreen());
+                              },
+                              child: Container(
+                                margin:  EdgeInsets.all(10),
+                                height: MediaQuery.of(context).size.height / 4,
+                                width: MediaQuery.of(context).size.width - 20,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                                clipBehavior: Clip.antiAlias,
+                                child: Image.network(
+                                  controller.myTripList[index].imageUrl,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
+                            ),
+                             Text(
+                              controller.myTripList[index].placeName,
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.black54)),
-                        ],
-                      ),
-                      const Divider(
-                        height: 50,
-                      ),
-                    ],
-                  );
-                },
+                                  color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
+                            ),
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '20 Aug 2025',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      color: Colors.black54),
+                                ),
+                                Text(' | ',
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                                Text('1 destination',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.black54)),
+                              ],
+                            ),
+                            const Divider(
+                              height: 50,
+                            ),
+                          ],
+                        );
+                    },
+                  ),
               ),
             ),
           ],

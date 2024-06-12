@@ -109,8 +109,8 @@ class DestinationDetails extends StatelessWidget {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () => Get.to(() =>
-                        const TripDetails()),
+                        // onTap: () => Get.to(() =>
+                        // const TripDetails()),
                         child: Column(
                           crossAxisAlignment:
                           CrossAxisAlignment.start,
