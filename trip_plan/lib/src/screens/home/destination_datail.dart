@@ -66,7 +66,8 @@ class DestinationDetails extends StatelessWidget {
                       width: 400,
                       child: Center(
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                              },
                               child: const Text(
                                 'See on the map',
                                 style: TextStyle(

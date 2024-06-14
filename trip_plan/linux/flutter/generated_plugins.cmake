@@ -3,6 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  paystack_manager_package
+  smart_auth
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

@@ -8,7 +8,6 @@ class TripController extends GetxController{
 @override
   void onInit() {
     super.onInit();
-    print('inside tc init methode');
    fetchAllTripPlaces();
   }
   final tripRepo=Get.put(TripRepository());
@@ -25,11 +24,11 @@ class TripController extends GetxController{
   }
 fetchAllTripPlaces()async{
     try{
-      print('inside trip controller');
+      // print('inside trip controller');
     var list = await tripRepo.fetchAllTripPlaces();
     tripList.assignAll(list);
-      print('after calling tripRepo.fetchAllTripPlaces();');
-    print('trip list ${tripList.value}');
+      // print('after calling tripRepo.fetchAllTripPlaces();');
+    // print('trip list ${tripList.value}');
     }catch(e){
 
       Loaders.warningSnackBar(title: 'Oh Snap', message: e);

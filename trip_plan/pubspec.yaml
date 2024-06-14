@@ -56,6 +56,9 @@ dependencies:
   get_storage: ^2.1.1
   firebase_storage: ^11.7.6
   shimmer: ^3.0.0
+  paystack_manager_package: ^0.1.0
+  razorpay_web: ^1.4.2
+  fluttertoast: ^8.2.6
 
   
 dev_dependencies:
