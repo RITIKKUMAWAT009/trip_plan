@@ -161,9 +161,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:trip_plan/src/bottom_navigation/bottom_navigation.dart';
 import 'package:trip_plan/src/controller/my_trip_controller/my_trip_controller.dart';
+import 'package:trip_plan/src/models/trip_model/trip_model.dart';
+import 'package:trip_plan/src/screens/home/home_screen.dart';
 import 'package:trip_plan/src/screens/route_detail/route_detail_screen.dart';
 import 'package:trip_plan/src/screens/wishlist/wishlist_screen.dart';
+import 'package:trip_plan/src/utils/Loaders/loaders.dart';
 
 class MyTripsScreen extends StatelessWidget {
   const MyTripsScreen({super.key});
@@ -258,8 +262,8 @@ class ItineraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(MyTripController());
-    print(controller.myTripList.length);
+    final controller = MyTripController.instance;
+    print(controller.favoriteTrips.length);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -268,57 +272,64 @@ class ItineraryScreen extends StatelessWidget {
           children: [
             Obx(
             ()=> SizedBox(
-                height: MediaQuery.of(context).size.height,
+                height: MediaQuery.of(context).size.height-350,
                 child: ListView.builder(
-                    itemCount: controller.myTripList.value.length,
+                    itemCount: controller.favoriteTrips.value.length,
                     itemBuilder: (context, index) {
-                      return  Column(
-                          children: [
-                            GestureDetector(
-                              onTap: (){
-                                Get.to(()=>RouteDetailScreen());
-                              },
-                              child: Container(
-                                margin:  EdgeInsets.all(10),
-                                height: MediaQuery.of(context).size.height / 4,
-                                width: MediaQuery.of(context).size.width - 20,
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                                clipBehavior: Clip.antiAlias,
-                                child: Image.network(
-                                  controller.myTripList[index].imageUrl,
-                                  fit: BoxFit.fitWidth,
+                      final TripModel item=controller.favoriteTrips[index];
+                      return  Dismissible(onDismissed: (direction) {
+                        controller.removeFromFavorites(item);
+                        Loaders.warningSnackBar(title: item.placeName, message: 'was deleted');
+                      },
+                        key:  Key(item.placeId),
+                        child: Column(
+                            children: [
+                              GestureDetector(
+                                onTap: (){
+                                  Get.to(()=>RouteDetailScreen(trip:item),);
+                                },
+                                child: Container(
+                                  margin:  EdgeInsets.all(10),
+                                  height: MediaQuery.of(context).size.height / 4,
+                                  width: MediaQuery.of(context).size.width - 20,
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: Image.network(
+                                    controller.favoriteTrips[index].imageUrl,
+                                    fit: BoxFit.fitWidth,
+                                  ),
                                 ),
                               ),
-                            ),
-                             Text(
-                              controller.myTripList[index].placeName,
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '20 Aug 2025',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black54),
-                                ),
-                                Text(' | ',
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                                Text('1 destination',
+                               Text(
+                                controller.favoriteTrips[index].placeName,
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 26, fontWeight: FontWeight.bold),
+                              ),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '20 Aug 2025',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
-                                        color: Colors.black54)),
-                              ],
-                            ),
-                            const Divider(
-                              height: 50,
-                            ),
-                          ],
-                        );
+                                        color: Colors.black54),
+                                  ),
+                                  Text(' | ',
+                                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                                  Text('1 destination',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                          color: Colors.black54)),
+                                ],
+                              ),
+                              const Divider(
+                                height: 50,
+                              ),
+                            ],
+                          ),
+                      );
                     },
                   ),
               ),
@@ -339,7 +350,10 @@ class ItineraryScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
             child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                // print(DateTime.now());
+              BottomNavigationController.instance.selectedIndex.value=0;
+              },
               icon: const Icon(Icons.add),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue[800],

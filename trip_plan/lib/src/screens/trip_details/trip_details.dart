@@ -7,6 +7,7 @@ import 'package:trip_plan/src/controller/trip_controller/trip_controller.dart';
 import 'package:trip_plan/src/models/trip_model/trip_model.dart';
 import 'package:trip_plan/src/screens/review/reviews_screen.dart';
 import 'package:trip_plan/src/screens/trip_details/widgets/greating_dialog.dart';
+import 'package:trip_plan/src/utils/Loaders/loaders.dart';
 
 import '../../controller/my_trip_controller/my_trip_controller.dart';
 import '../my_trip/my_trips.dart';
@@ -356,8 +357,9 @@ class TripDetails extends StatelessWidget {
                                                           .width,
                                                       child: ElevatedButton.icon(
                                                         onPressed: () {
-                                                          tripController.myTripList.add(trip);
-                                                          Get.to(MyTripsScreen());
+                                                          // tripController.myTripList.add(trip);
+                                                          tripController.isFavorite(trip)?Loaders.warningSnackBar(title: 'Hey!', message: 'Already exist in your favorite list'):
+                                                          tripController.addToFavorites(trip);
                                                         },
                                                         label: const Text(
                                                           "Add to my trip",

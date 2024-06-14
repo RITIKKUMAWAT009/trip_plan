@@ -30,16 +30,8 @@ final _db=FirebaseFirestore.instance;
   Future<List<TripModel>> fetchAllTripPlaces()async{
     try{
       //first and short way to read data from querySnapShot
-      print('inside trip repo');
       var querySnapshot = await _db.collection('TripPlaces').get();
-      print('after calling _db.collection (TripPlaces ).get();');
-      print(querySnapshot.docs.length);
-      for(var query in querySnapshot.docs){
-        print(query.data());
-      }
       var list = querySnapshot.docs.map((singlePlace) =>TripModel.formJson(singlePlace.data())).toList();
-      print('list inside trip repo ${list}');
-
       //second and long way to read data from querySnapShot
       // List<TripModel> list=[];
       // for(var singePlace in querySnapshot.docs){

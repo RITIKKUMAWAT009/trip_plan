@@ -12,43 +12,45 @@ class BottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(BottomNavigationController());
     return Scaffold(
-      bottomNavigationBar: AnimatedNotchBottomBar(
-        showShadow: true,
-        showBlurBottomBar: true,
-        showTopRadius: true,
-        textOverflow: TextOverflow.ellipsis,
-        elevation: 5,durationInMilliSeconds: 5,
-        kBottomRadius: 5,
-        circleMargin: 1,
-        blurOpacity: 1,
-        kIconSize: 20,
-        notchGradient: RadialGradient(colors: [
-          Colors.blue.shade200,
-          Colors.blue.shade500,
-          Colors.blue.shade800,
-        ]),
-        itemLabelStyle: TextStyle(color: Colors.white),
-        showLabel: true,
-        maxLine: 1,
-        bottomBarHeight: 34,
-        color: Colors.blue.shade800,
-        onTap: (value) => controller.selectedIndex.value = value,
-        bottomBarItems: const [
-          BottomBarItem(
-              itemLabel: "Home",
-              inActiveItem: Icon(Icons.home,color: Colors.white,),
-              activeItem: Icon(Icons.home,color: Colors.white,)),
-          BottomBarItem(
-              itemLabel: "MyTrip",
-              inActiveItem: Icon(Icons.umbrella,color: Colors.white,),
-              activeItem: Icon(Icons.umbrella,color: Colors.white,)),
-          BottomBarItem(
-              itemLabel: "Profile",
-              inActiveItem: Icon(Icons.person_pin,color: Colors.white,),
-              activeItem: Icon(Icons.person_pin,color: Colors.white,)),
-        ],
-        notchBottomBarController:
-            NotchBottomBarController(index: controller.selectedIndex.value),
+      bottomNavigationBar: Obx(
+        ()=> AnimatedNotchBottomBar(
+          showShadow: true,
+          showBlurBottomBar: true,
+          showTopRadius: true,
+          textOverflow: TextOverflow.ellipsis,
+          elevation: 5,durationInMilliSeconds: 5,
+          kBottomRadius: 5,
+          circleMargin: 1,
+          blurOpacity: 1,
+          kIconSize: 20,
+          notchGradient: RadialGradient(colors: [
+            Colors.blue.shade200,
+            Colors.blue.shade500,
+            Colors.blue.shade800,
+          ]),
+          itemLabelStyle: TextStyle(color: Colors.white),
+          showLabel: true,
+          maxLine: 1,
+          bottomBarHeight: 34,
+          color: Colors.blue.shade800,
+          onTap: (value) => controller.selectedIndex.value = value,
+          bottomBarItems: const [
+            BottomBarItem(
+                itemLabel: "Home",
+                inActiveItem: Icon(Icons.home,color: Colors.white,),
+                activeItem: Icon(Icons.home,color: Colors.white,)),
+            BottomBarItem(
+                itemLabel: "MyTrip",
+                inActiveItem: Icon(Icons.umbrella,color: Colors.white,),
+                activeItem: Icon(Icons.umbrella,color: Colors.white,)),
+            BottomBarItem(
+                itemLabel: "Profile",
+                inActiveItem: Icon(Icons.person_pin,color: Colors.white,),
+                activeItem: Icon(Icons.person_pin,color: Colors.white,)),
+          ],
+          notchBottomBarController:
+              NotchBottomBarController(index: controller.selectedIndex.value),
+        ),
       ),
       body: Obx(() => controller.screen[controller.selectedIndex.value]),
     );
@@ -56,6 +58,7 @@ class BottomNavigation extends StatelessWidget {
 }
 
 class BottomNavigationController extends GetxController {
+  static BottomNavigationController get instance=>Get.find();
   RxInt selectedIndex = 0.obs;
   List<Widget> screen = [
     const HomeScreen(),
